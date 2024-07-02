@@ -1,12 +1,10 @@
-import express from "express";
-
-const server = express();
-const router = express.Router({});
-
-server.get("/Health", (req , res) => {
-    return res.send("Working")
+var express = require("express");
+var server = express();
+var router = express.Router({});
+var name = "Damir";
+server.get("/Health", function (req, res) {
+    return res.send({ name: name });
 });
-
-server.listen(8000, () => {
-    console.log("working")
+server.listen(8000, function () {
+    console.log("working");
 });
